@@ -12,60 +12,17 @@ int main() {
 //    myfile.open ("../vectors.txt");
 //    myfile << "Writing this to a file.\n";
 //    myfile.close();
-    cout << "\t Vectors from 2^1 to 2^20" << endl;
-    auto n = 20;
+    cout << "\t Vectors from 10^1 to 10^6" << endl;
+    auto n = 6;
     vector<vector<int>> vectors;
 
-    for (int i = 1; i <= n; ++i) {
+    for (int i = 2; i <= n; ++i) {
         vector<int> myvector;
         random_vector(myvector, i);
         vectors.push_back(myvector);
     }
 
     auto i = 1;
-
-    cout << "\t=============== Quick Sort ===============" << endl;
-    i = 1;
-    for (auto &item:vectors) {
-        //Create a new vector to preserve the disorder for next uses
-        auto temp_vec = item;
-        auto start = chrono::high_resolution_clock::now();
-        quick_sort(temp_vec, 0, temp_vec.size()-1);
-        // print_vector(temp_vec);
-        auto stop = chrono::high_resolution_clock::now();
-        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-        cout << "Vector size 2^" << i << " sort duration is " << duration.count() << " microseconds" << endl;
-        ++i;
-    }
-
-
-    cout << "\t=============== Merge Sort ===============" << endl;
-    i = 1;
-    for (auto &item:vectors) {
-        //Create a new vector to preserve the disorder for next uses
-        auto temp_vec = item;
-        auto start = chrono::high_resolution_clock::now();
-        auto res = merge_sort(temp_vec);
-      //  print_vector(res);
-        auto stop = chrono::high_resolution_clock::now();
-        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-        cout << "Vector size 2^" << i << " sort duration is " << duration.count() << " microseconds" << endl;
-        ++i;
-    }
-
-    cout << "\t=============== Selection Sort ===============" << endl;
-    i = 1;
-    for (auto &item:vectors) {
-        //Create a new vector to preserve the disorder for next uses
-        auto temp_vec = item;
-        auto start = chrono::high_resolution_clock::now();
-        selection_sort(temp_vec);
-        //print_vector(temp_vec);
-        auto stop = chrono::high_resolution_clock::now();
-        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-        cout << "Vector size 2^" << i << " sort duration is " << duration.count() << " microseconds" << endl;
-        ++i;
-    }
 
     cout << "\t=============== Insertion Sort ===============" << endl;
     i = 1;
@@ -77,7 +34,7 @@ int main() {
         //   print_vector(temp_vec);
         auto stop = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-        cout << "Vector size 2^" << i << " sort duration is " << duration.count() << " microseconds" << endl;
+        cout << "Vector size 10^" << i+1 << " sort duration is " << duration.count() << " microseconds" << endl;
         ++i;
     }
 
@@ -91,7 +48,7 @@ int main() {
         // print_vector(temp_vec);
         auto stop = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-        cout << "Vector size 2^" << i << " sort duration is " << duration.count() << " microseconds" << endl;
+        cout << "Vector size 10^" << i+1 << " sort duration is " << duration.count() << " microseconds" << endl;
         ++i;
     }
 

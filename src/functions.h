@@ -14,28 +14,10 @@ void bubble_sort(vector<T>&);
 ///////////////////////
 
 template <typename T>
-void selection_sort(vector<T>&);
-
-///////////////////////
-
-template <typename T>
 void insertion_sort(vector<T>&);
-
-///////////////////////
-
-template <typename T>
-vector<T> merge_sort(vector<T>&);
-
-template<typename T>
-vector<T> merge(vector<T>&left , vector<T>&right, vector<T>&merged);
-
-///////////////////////
 
 template <typename T>
 void quick_sort(vector<T>& Vector, int begin, int end);
-
-template <typename T>
-int partition(vector<T>&, int, int);
 
 ///////////////////////
 //Auxiliary functions
