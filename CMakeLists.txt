@@ -3,4 +3,4 @@ project(bubble_bucket_sorting)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(bubble_bucket_sorting main.cpp)
+add_executable(bubble_bucket_sorting src/main.cpp)
