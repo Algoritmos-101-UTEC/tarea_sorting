@@ -90,10 +90,7 @@ void random_vector(T& myVector, int size){ //2^size
     auto a = pow(10,size);
 
     for (int i =0; i < a; i++) {
-        int b = rand() % int(pow(2,20)) + 1; //random number between 1 and 100
+        int b = rand() % int(pow(10,6)) + 1; //random number between 1 and 100
         myVector.push_back(b);
     }
 }
-
-
-
