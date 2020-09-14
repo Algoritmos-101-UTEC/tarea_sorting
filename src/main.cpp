@@ -24,19 +24,19 @@ int main() {
 
     auto i = 1;
 
-    cout << "\t=============== Insertion Sort ===============" << endl;
-    i = 1;
-    for (auto &item:vectors) {
-        //Create a new vector to preserve the disorder for next uses
-        auto temp_vec = item;
-        auto start = chrono::high_resolution_clock::now();
-        insertion_sort(temp_vec);
-        //   print_vector(temp_vec);
-        auto stop = chrono::high_resolution_clock::now();
-        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-        cout << "Vector size 10^" << i+1 << " sort duration is " << duration.count() << " microseconds" << endl;
-        ++i;
-    }
+//    cout << "\t=============== Insertion Sort ===============" << endl;
+//    i = 1;
+//    for (auto &item:vectors) {
+//        //Create a new vector to preserve the disorder for next uses
+//        auto temp_vec = item;
+//        auto start = chrono::high_resolution_clock::now();
+//        insertion_sort(temp_vec);
+//        //   print_vector(temp_vec);
+//        auto stop = chrono::high_resolution_clock::now();
+//        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+//        cout << "Vector size 10^" << i+1 << " sort duration is " << duration.count() << " microseconds" << endl;
+//        ++i;
+//    }
 
     i = 1;
     cout << "\t=============== Bubble Sort ===============" << endl;
@@ -45,6 +45,20 @@ int main() {
         auto temp_vec = item;
         auto start = chrono::high_resolution_clock::now();
         bubble_sort(temp_vec);
+        // print_vector(temp_vec);
+        auto stop = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+        cout << "Vector size 10^" << i+1 << " sort duration is " << duration.count() << " microseconds" << endl;
+        ++i;
+    }
+
+    i = 1;
+    cout << "\t=============== Shell Sort ===============" << endl;
+    for (auto &item:vectors) {
+        //Create a new vector to preserve the disorder for next uses
+        auto temp_vec = item;
+        auto start = chrono::high_resolution_clock::now();
+        shellSort(temp_vec);
         // print_vector(temp_vec);
         auto stop = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);

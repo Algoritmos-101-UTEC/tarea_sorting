@@ -17,6 +17,9 @@ template <typename T>
 void insertion_sort(vector<T>&);
 
 template <typename T>
+void shellSort(vector<T> &vector);
+
+template <typename T>
 void quick_sort(vector<T>& Vector, int begin, int end);
 
 ///////////////////////
