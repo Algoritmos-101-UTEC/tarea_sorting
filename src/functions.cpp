@@ -7,35 +7,21 @@ template<typename T>
 void bubble_sort(vector<T> &vector){
     auto n = vector.size();
     bool swapped = true;
-
+    T* val1;
+    T* val2;
     auto x = -1;
     while(swapped){
         swapped = false;
         x += 1;
         for (int i = 1; i < n-x; ++i) {
             if (vector[i-1] > vector[i]){
-                swap(vector[i-1], vector[i]);
+                val1 = &vector[i-1];
+                val2 = &vector[i];
+                my_swap(val1, val2);
                 swapped = true;
             }
         }
     }
-}
-
-template<typename T>
-void insertion_sort(vector<T> &vector) {
-
-    for (int i = 0; i < vector.size(); ++i) {
-        auto cursor = vector[i];
-        auto pos = i;
-
-        while( (pos > 0) && (vector[pos-1]> cursor)){
-            vector[pos] = vector[pos-1];
-            pos = pos - 1;
-        }
-
-        vector[pos] = cursor;
-    }
-
 }
 
 /* function to sort arr using shellSort */
@@ -76,10 +62,11 @@ void print_vector(vector<int> vec){
     cout << "\b\b"<< endl;
 }
 
-void swap(int &a, int&b){
-    auto temp = a;
-    a = b;
-    b = temp;
+template<typename T>
+void my_swap(T*a, T*b){
+    T* temp = a;
+    *a = *b;
+    *b = *temp;
 }
 
 template<typename T>

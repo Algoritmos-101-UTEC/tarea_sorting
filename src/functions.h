@@ -14,21 +14,17 @@ void bubble_sort(vector<T>&);
 ///////////////////////
 
 template <typename T>
-void insertion_sort(vector<T>&);
-
-template <typename T>
 void shellSort(vector<T> &vector);
 
-template <typename T>
-void quick_sort(vector<T>& Vector, int begin, int end);
-
-///////////////////////
+//////////////////////
 //Auxiliary functions
 template<typename T>
 void random_vector(T&, int size);
 
 template <typename T>
 void print_vector(vector<T> vec);
-void swap(int&, int&);
+
+template<typename T>
+void my_swap(T&, T&);
 
 #endif //TAREA4_SORTING_FUNCTIONS_H
