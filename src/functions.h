@@ -25,6 +25,6 @@ template <typename T>
 void print_vector(vector<T> vec);
 
 template<typename T>
-void my_swap(T&, T&);
+void my_swap(T*, T*);
 
 #endif //TAREA4_SORTING_FUNCTIONS_H

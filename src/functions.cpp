@@ -24,34 +24,20 @@ void bubble_sort(vector<T> &vector){
     }
 }
 
-/* function to sort arr using shellSort */
 template<typename T>
 void shellSort(vector<T> &vector)
 {
-    // Start with a big gap, then reduce the gap
     for (int gap = (vector.size())/2; gap > 0; gap /= 2)
     {
-        // Do a gapped insertion sort for this gap size.
-        // The first gap elements a[0..gap-1] are already in gapped order
-        // keep adding one more element until the entire array is
-        // gap sorted
         for (int i = gap; i <  vector.size(); i += 1)
         {
-            // add a[i] to the elements that have been gap sorted
-            // save a[i] in temp and make a hole at position i
             int temp = vector[i];
-
-            // shift earlier gap-sorted elements up until the correct
-            // location for a[i] is found
             int j;
             for (j = i; j >= gap && vector[j - gap] > temp; j -= gap)
                 vector[j] = vector[j - gap];
-
-            //  put temp (the original a[i]) in its correct location
             vector[j] = temp;
         }
     }
-
 }
 
 
@@ -64,7 +50,8 @@ void print_vector(vector<int> vec){
 
 template<typename T>
 void my_swap(T*a, T*b){
-    T* temp = a;
+    T* temp = new T;
+    *temp = *a;
     *a = *b;
     *b = *temp;
 }
